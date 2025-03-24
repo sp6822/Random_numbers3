@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+<TextView
+android:id="@+id/Random1"
+android:layout_width="103dp"
+android:layout_height="33dp"
+android:layout_marginStart="15dp"
+android:layout_marginTop="40dp"
+android:text="TextView"
+android:textSize="25dp"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/Random2"
+        android:layout_width="103dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Random1" />
+
+
+    <EditText
+        android:id="@+id/user_input"
+        android:layout_width="103dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Random2" />
+
+
+    <Button
+        android:id="@+id/check_answer"
+        android:layout_width="103dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="336dp"
+        android:onClick="check"
+        android:text="check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_input"
+        tools:layout_editor_absoluteX="15dp" />
+
+
+    <ImageView
+        android:id="@+id/result_image"
+        android:layout_width="103dp"
+        android:layout_height="111dp"
+        android:visibility="invisible"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_answer"
+        app:srcCompat="@drawable/ve" />
+
+
+    <TextView
+        android:id="@+id/answer2"
+        android:layout_width="103dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        android:text="TextView"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/Random1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/Random2_2"
+        android:layout_width="103dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        android:text="TextView"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/Random2"
+        app:layout_constraintTop_toBottomOf="@+id/answer2" />
+
+    <EditText
+        android:id="@+id/user_input2"
+        android:layout_width="103dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:visibility="invisible"
+        android:inputType="numberSigned"
+        app:layout_constraintStart_toEndOf="@+id/user_input"
+        app:layout_constraintTop_toBottomOf="@+id/Random2_2" />
+
+
+    <Button
+        android:id="@+id/check_answer2"
+        android:layout_width="103dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="336dp"
+        android:onClick="check2"
+        android:text="check"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/check_answer" />
+
+
+    <ImageView
+        android:id="@+id/result_image2"
+        android:layout_width="103dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="80dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/result_image"
+        app:layout_constraintTop_toBottomOf="@+id/check_answer2"
+        app:srcCompat="@drawable/ve" />
+
+
+    <TextView
+        android:id="@+id/answer3"
+        android:layout_width="103dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="15dp"
+        android:text="TextView"
+        android:textSize="25dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/answer2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/Random2_3"
+        android:layout_width="103dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="15dp"
+        android:text="TextView"
+        android:textSize="25dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Random2_2"
+        app:layout_constraintTop_toBottomOf="@+id/answer3" />
+
+    <EditText
+        android:id="@+id/input_user3"
+        android:layout_width="103dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="15dp"
+        android:ems="10"
+        android:visibility="invisible"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/user_input2"
+        app:layout_constraintTop_toBottomOf="@+id/Random2_3" />
+
+
+    <Button
+        android:id="@+id/check_answer3"
+        android:layout_width="103dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="336dp"
+        android:onClick="check3"
+        android:text="check"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/check_answer2" />
+
+    <ImageView
+        android:id="@+id/result_image3"
+        android:layout_width="103dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="80dp"
+        android:visibility="invisible"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/result_image2"
+        app:layout_constraintTop_toBottomOf="@+id/check_answer3"
+        app:srcCompat="@drawable/ve" />
+
+
+    <Button
+        android:id="@+id/new_button"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="ristart"
+        android:text="new"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_answer2"
+        app:layout_constraintVertical_bias="0.858" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
