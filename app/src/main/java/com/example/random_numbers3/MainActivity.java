@@ -7,12 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.random_numbers3.R;
-
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView result_image, result_image2, result_image3;
     Button check_answer, check_answer2, check_answer3, new_button;
     int num1, num2, num3, num4, wins;
-    Random random = new Random();
+    Random ra = new Random();
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -29,12 +24,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // חיבור רכיבי ה-XML
         Random1 = findViewById(R.id.Random1);
         Random2 = findViewById(R.id.Random2);
         user_input = findViewById(R.id.user_input);
-        check_answer = findViewById(R.id.check_answer);
         result_image = findViewById(R.id.result_image);
+        check_answer = findViewById(R.id.check_answer);
         answer2 = findViewById(R.id.answer2);
         Random2_2 = findViewById(R.id.Random2_2);
         user_input2 = findViewById(R.id.user_input2);
@@ -46,16 +40,25 @@ public class MainActivity extends AppCompatActivity {
         check_answer3 = findViewById(R.id.check_answer3);
         result_image3 = findViewById(R.id.result_image3);
         new_button = findViewById(R.id.new_button);
+        check_answer.setVisibility(View.VISIBLE);
+        check_answer.bringToFront();
 
-        restartGame();
+        num1 = ra.nextInt(89) + 10;
+        Random1.setText(String.valueOf(num1));
+
+        num2 = ra.nextInt(89) + 10;
+        Random2.setText(String.valueOf(num2));
+
+        wins = 0;
     }
 
     public void check(View view) {
-        String input = user_input.getText().toString();
-        if (!input.equals("")) {
-            if (num1 + num2 == Integer.parseInt(input)) {
+        String text1 = user_input.getText().toString();
+        if (!text1.equals("")) {
+            if (num1 + num2 == Integer.valueOf(text1)) {
                 result_image.setVisibility(View.VISIBLE);
                 wins++;
+                Random2_2.setText(String.valueOf(wins));
             } else {
                 result_image.setImageResource(R.drawable.ex);
                 result_image.setVisibility(View.VISIBLE);
@@ -63,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
             user_input.setEnabled(false);
             check_answer.setEnabled(false);
             answer2.setText(String.valueOf(num1 + num2));
-            answer2.setVisibility(View.VISIBLE);
-
-            num3 = random.nextInt(89) + 10;
+            num3 = ra.nextInt(89) + 10;
             Random2_2.setText(String.valueOf(num3));
+
+            answer2.setVisibility(View.VISIBLE);
             Random2_2.setVisibility(View.VISIBLE);
             user_input2.setVisibility(View.VISIBLE);
             check_answer2.setVisibility(View.VISIBLE);
@@ -74,9 +77,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void check2(View view) {
-        String input = user_input2.getText().toString();
-        if (!input.equals("")) {
-            if ((num1 + num2) + num3 == Integer.parseInt(input)) {
+        String text1 = user_input2.getText().toString();
+        if (!text1.equals("")) {
+            if ((num1 + num2) + num3 == Integer.valueOf(text1)) {
                 result_image2.setVisibility(View.VISIBLE);
                 wins++;
             } else {
@@ -86,20 +89,20 @@ public class MainActivity extends AppCompatActivity {
             user_input2.setEnabled(false);
             check_answer2.setEnabled(false);
             answer3.setText(String.valueOf((num1 + num2) + num3));
-            answer3.setVisibility(View.VISIBLE);
-
-            num4 = random.nextInt(89) + 10;
+            num4 = ra.nextInt(89) + 10;
             Random2_3.setText(String.valueOf(num4));
-            Random2_3.setVisibility(View.VISIBLE);
-            input_user3.setVisibility(View.VISIBLE);
+
             check_answer3.setVisibility(View.VISIBLE);
+            input_user3.setVisibility(View.VISIBLE);
+            Random2_3.setVisibility(View.VISIBLE);
+            answer3.setVisibility(View.VISIBLE);
         }
     }
 
     public void check3(View view) {
-        String input = input_user3.getText().toString();
-        if (!input.equals("")) {
-            if ((num1 + num2 + num3) + num4 == Integer.parseInt(input)) {
+        String text1 = input_user3.getText().toString();
+        if (!text1.equals("")) {
+            if ((num1 + num2 + num3) + num4 == Integer.valueOf(text1)) {
                 result_image3.setVisibility(View.VISIBLE);
                 wins++;
             } else {
@@ -112,20 +115,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void restartGame() {
-        num1 = random.nextInt(89) + 10;
-        num2 = random.nextInt(89) + 10;
-        num3 = random.nextInt(89) + 10;
-        num4 = random.nextInt(89) + 10;
+    public void ristart(View view) {
+        num1 = ra.nextInt(89) + 10;
+        num2 = ra.nextInt(89) + 10;
+        num3 = ra.nextInt(89) + 10;
+        num4 = ra.nextInt(89) + 10;
+
         wins = 0;
 
         Random1.setText(String.valueOf(num1));
         Random2.setText(String.valueOf(num2));
-
-        answer2.setText("");
-        answer3.setText("");
         Random2_2.setText("");
         Random2_3.setText("");
+        answer2.setText("");
+        answer3.setText("");
 
         user_input.setText("");
         user_input2.setText("");
@@ -149,13 +152,5 @@ public class MainActivity extends AppCompatActivity {
 
         user_input2.setVisibility(View.INVISIBLE);
         input_user3.setVisibility(View.INVISIBLE);
-        answer2.setVisibility(View.INVISIBLE);
-        answer3.setVisibility(View.INVISIBLE);
-        Random2_2.setVisibility(View.INVISIBLE);
-        Random2_3.setVisibility(View.INVISIBLE);
-    }
-
-    public void ristart(View view) {
-        restartGame();
     }
 }
