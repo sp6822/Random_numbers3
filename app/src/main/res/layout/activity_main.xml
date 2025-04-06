@@ -52,7 +52,7 @@ app:layout_constraintTop_toTopOf="parent" />
         android:layout_marginTop="80dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_input"
-        app:srcCompat="@drawable/ex" />
+        app:srcCompat="@drawable/vi" />
 
     <Button
         android:id="@+id/check_answer"
@@ -113,7 +113,7 @@ app:layout_constraintTop_toTopOf="parent" />
         android:layout_marginTop="80dp"
         app:layout_constraintStart_toEndOf="@+id/result_image"
         app:layout_constraintTop_toBottomOf="@+id/user_input2"
-        app:srcCompat="@drawable/ex" />
+        app:srcCompat="@drawable/vi" />
 
     <Button
         android:id="@+id/check_answer2"
@@ -183,7 +183,7 @@ app:layout_constraintTop_toTopOf="parent" />
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/result_image2"
         app:layout_constraintTop_toBottomOf="@+id/input_user3"
-        app:srcCompat="@drawable/ex" />
+        app:srcCompat="@drawable/vi" />
 
 
     <Button
